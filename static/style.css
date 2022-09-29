@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+
+.logo {
+    font-size: 30px;
+    font-family: "Moscow metro", serif;
+    padding-right: 20px;
+    border-right: 2px solid red;
+}
+
+a {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar-text {
+    font-size: 30px;
+    margin-right: 50px;
+    display: flex;
+    align-items: center;
+}
+.header {
+    display: flex;
+    background-color: lightgray;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.navbar {
+    float: right;
+    display: flex;
+    justify-content: end;
+}
+.link {
+    color: black;
+}
+
+.link:hover {
+    border-bottom: 2px solid red;
+}
+
+a {
+    text-decoration: none;
+}
+
+.userlink {
+    transition: all 0.5s;
+    color: white;
+    font-size: 50px;
+    vertical-align: middle;
+
+}
+
+.userlink:hover {
+    transition: all 0.5s;
+    color: gray;
+
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.main {
+    background-color: #4a4065;
+}
+
+.namelogo {
+    display: flex;
+}
+
+.footer {
+    margin-top: 20px;
+    padding-top: 5px;
+    border-top: 2px solid rgba(255, 255, 255, 0.2);;
+    text-align: center;
+    color: white;
+    padding-bottom: 5px;
+}
+.background-admin {
+    background-color: #4a4065;
+}
+.side-block {
+    display: flex;
+    border: 3px solid white;
+    height: 300px;
+}
+.container {
+    padding-top: 20px;
+    margin: 0 30px;
+    background-color: rgba(255, 255, 255, 0.2);
+    text-align: center;
+    color: white;
+    height: 100%;
+}
+
+.container-main {
+    display: flex;
+    padding-top: 20px;
+    margin: 0 30px 0 30px;
+    justify-content: start;
+    background-color: rgba(255, 255, 255, 0.2);
+    text-align: center;
+    width: 75%;
+    color: white;
+    height: 100%;
+}
+
+.userheader {
+    width: 100%;
+    padding-bottom: 20px;
+    border-bottom: 5px solid #4a4065;
+}
+
+.userheaderimage {
+    width: 100%;
+}
+
+.userlogo {
+    width: 10%;
+    border-radius: 100%;
+    border: 5px solid #16cb16;
+    margin-right: 30px;
+    vertical-align: text-top;
+}
+
+.about-info {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 600px;
+}
+
+.about-column {
+    font-size: 10px;
+    padding: 3px 3px;
+    border-left: 2px solid #4a4065;
+    display: inline;
+    height: 30px;
+}
+
+.about-column:last-child {
+    font-size: 10px;
+    padding: 3px 3px;
+    border-right: 2px solid #4a4065;
+    border-left: 2px solid #4a4065;
+    display: inline;
+    height: 30px;
+}
+
+.posts {
+    margin: 20px auto 0;
+    width: 70%;
+}
+
+.post {
+    padding: 20px;
+    width: 100%;
+    border-bottom: 1px solid #4a4065;
+}
+
+.post-title {
+    font-size: 24px;
+}
+
+.userinfo {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.date {
+    font-size: 10px;
+    float: right;
+    color: lightgray;
+}
+
+.red_color {
+    color: red;
+}
+
+.black_color {
+    color: black;
+}
+
+@media (min-width: 1000px) {
+    .logo {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 800px) {
+    .navbar {
+        display: none;
+    }
+
+    .userlink {
+        font-size: 30px;
+    }
+
+    .userlogo {
+        width: 10%;
+        margin-right: 0;
+    }
+}
+
+.headerlogo {
+    width: 100px;
+}
+
+._logo {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    float: right;
+}
+
+.a192 {
+    width: 50px;
+    border: 2px solid gray;
+}
