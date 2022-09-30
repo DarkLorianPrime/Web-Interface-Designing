@@ -18,6 +18,7 @@ a {
     display: flex;
     align-items: center;
 }
+
 .header {
     display: flex;
     background-color: lightgray;
@@ -30,6 +31,7 @@ a {
     display: flex;
     justify-content: end;
 }
+
 .link {
     color: black;
 }
@@ -63,6 +65,8 @@ html, body {
 
 .main {
     background-color: #4a4065;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .namelogo {
@@ -77,13 +81,21 @@ html, body {
     color: white;
     padding-bottom: 5px;
 }
+
 .background-admin {
     background-color: #4a4065;
 }
+
 .side-block {
     display: flex;
     border: 3px solid white;
     height: 300px;
+    width: 20%;
+    text-align: center;
+    color: white;
+}
+.one-user {
+    text-align: left;
 }
 .container {
     padding-top: 20px;
@@ -220,4 +232,14 @@ html, body {
 .a192 {
     width: 50px;
     border: 2px solid gray;
+}
+
+.admin {
+    border: 0;
+    margin: 2px;
+}
+
+.center-text {
+    text-align: center;
+    padding-bottom: 10px;
 }
