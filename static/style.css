@@ -6,10 +6,15 @@
     font-family: "Moscow metro", serif;
     padding-right: 20px;
     border-right: 2px solid red;
+    align-self: center;
 }
 
 a {
     font-family: 'Montserrat', sans-serif;
+}
+
+.main-header {
+    flex-direction: column;
 }
 
 .navbar-text {
@@ -24,6 +29,10 @@ a {
     background-color: lightgray;
     padding: 10px;
     justify-content: space-between;
+}
+
+.header-text {
+    margin-right: 10px;
 }
 
 .navbar {
@@ -94,9 +103,11 @@ html, body {
     text-align: center;
     color: white;
 }
+
 .one-user {
     text-align: left;
 }
+
 .container {
     padding-top: 20px;
     margin: 0 30px;
@@ -242,4 +253,74 @@ html, body {
 .center-text {
     text-align: center;
     padding-bottom: 10px;
+}
+
+@media (max-width: 1350px) {
+    .side-block {
+        display: none;
+    }
+}
+
+@media (max-width: 1050px) {
+    .side-block {
+        display: none;
+    }
+
+    .logo {
+        font-size: 40px;
+    }
+
+    .container-main {
+        width: 95%;
+    }
+
+    .posts {
+        width: 95%;
+        margin: 80px auto 0 auto;
+
+    }
+
+    .post-text {
+        font-size: 30px;
+    }
+
+    .post-title {
+        font-size: 40px;
+    }
+
+    .date {
+        font-size: 20px;
+    }
+
+    .userlink {
+        display: none;
+    }
+
+    .main-header {
+        position: fixed;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        animation: header_start 1s forwards;
+        background: lightgray
+    }
+}
+
+@keyframes header_start {
+    0% {
+        opacity: 5%
+    }
+    100% {
+        opacity: 100%
+    }
+}
+
+.post-title {
+    display: flex;
+    align-self: center;
+}
+
+.post-header {
+    display: flex;
 }
