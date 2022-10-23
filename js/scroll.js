@@ -5,5 +5,6 @@ function testScroll(ev) {
         document.getElementsByClassName("main-header")[0].style.display = "none";
     }
 }
+var Request = new XMLHttpRequest();
 
 window.onscroll = testScroll

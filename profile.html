@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Александр Касимов, Иерихон</title>
+    <link rel="stylesheet" href="static/style.css">
+    <script src="js/Handler.js" type="module"></script>
+    <script src="js/Pages/Profile.js" type="module"></script>
+    <script type="module">
+        import {needAuth} from "./js/Authenticate.js";
+
+        needAuth()
+    </script>
+</head>
+<body>
+<div class="header">
+    <a class="header-text logo">
+        <span class="red_color">Иери</span><span class="black_color">хон</span>
+    </a>
+    <div class="navbar">
+        <a class="header-text link" href="blogs">
+            На главную
+        </a>
+        <a class="header-text link" href="#">
+            Контакты
+        </a>
+        <a class="header-text link" href="#">
+            О нас
+        </a>
+    </div>
+</div>
+<div class="main_container">
+    <div class="container">
+        <div class="userheader">
+            <img class="userheaderimage" src="media/images/header_profile.png" alt="user header"/>
+            <div class="userinfo">
+                <div class="namelogo">
+                    <img class="userlogo cabinet" src="media/images/example_logo.png">
+                    <a class="userlink_cabinet" href="profile">Александр Касимов</a>
+                </div>
+                <div class="about-info">
+                    <div class="about-column">Онлайн</div>
+                    <div class="about-column">Зарегистрирован: <a id="date"></a></div>
+                    <div class="about-column">Публикаций: 50</div>
+                    <div class="about-column">Репутация: -24</div>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="container-main">
+                <div class="posts">
+                    <div class="post">
+                        <div class="post-header">
+                            <img class="userlogo cabinet" src="media/images/example_logo.png">
+                            <div class="post-name">
+                                <a class="post-title">Lorem ipsum dolor sit amet!</a>
+                                <a>Test blog.</a>
+                            </div>
+                        </div>
+                        <a class="post-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer finibus
+                            hendrerit
+                            lectus eleifend
+                            pharetra. Mauris dapibus sem eget ante fermentum pellentesque. Maecenas ultrices consequat
+                            libero,
+                            ac gravida nunc malesuada quis. Nunc vel dolor nulla. Aenean condimentum risus a dolor
+                            blandit, a
+                            pretium diam malesuada. Ut nibh tortor, maximus eget urna pretium, vehicula vulputate metus.
+                            Nunc ut
+                            interdum orci, ut tristique nunc. In placerat sit amet urna vel placerat.
+                        </a>
+                        <p class="date">15 Августа, 2022</p>
+                    </div>
+                    <div class="post">
+                        <div class="post-header">
+                            <img class="userlogo cabinet" src="media/images/example_logo.png">
+                            <a class="post-title">Lorem ipsum dolor sit amet!</a>
+                        </div>
+                        <a class="post-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer finibus
+                            hendrerit
+                            lectus eleifend
+                            pharetra. Mauris dapibus sem eget ante fermentum pellentesque. Maecenas ultrices consequat
+                            libero,
+                            ac gravida nunc malesuada quis. Nunc vel dolor nulla. Aenean condimentum risus a dolor
+                            blandit, a
+                            pretium diam malesuada. Ut nibh tortor, maximus eget urna pretium, vehicula vulputate metus.
+                            Nunc ut
+                            interdum orci, ut tristique nunc. In placerat sit amet urna vel placerat.
+                        </a>
+                        <p class="date">15 days ago</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        ©Darklorian, 2022
+    </footer>
+</div>
+</body>
+</html>

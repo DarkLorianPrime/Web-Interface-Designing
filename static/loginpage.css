@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+@font-face {
+    font-family: "Moscowmetro";
+    src: url('fonts/MoscowMetro.otf')
+}
+
+:root {
+    --background-main: #212327;
+    --background-header: #494e57;
+    --lines: #292c31;
+    --online: #598f5b;
+}
+
+p, a, button, input {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+main {
+    min-height: 95%;
+    height: auto !important;
+    background-color: var(--background-main);
+}
+
+.red_color {
+    color: red;
+}
+
+.black_color {
+    color: black;
+}
+
+.logo {
+    font-size: 50px;
+    font-family: "Moscowmetro", serif;
+    padding-right: 20px;
+    align-self: center;
+}
+
+.header-text {
+    margin-left: 20px;
+    align-self: center;
+}
+
+.logo_auth {
+    margin-top: 100px;
+    font-size: 50px;
+    font-family: "Moscowmetro", serif;
+    align-self: center;
+}
+
+.header {
+    background-color: var(--background-header);
+    height: 5%;
+    display: flex;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.auth-container {
+    position: relative;
+    width: 40%;
+    margin: auto;
+    align-content: center;
+    justify-content: center;
+    height: 600px;
+    text-align: center;
+    background-color: var(--background-header);
+    border-radius: 10px;
+}
+
+.content-container {
+    padding-top: 100px;
+}
+
+form {
+    text-align: center;
+    width: 312px;
+}
+
+.dop {
+    color: white;
+    margin-top: 2px;
+    font-family: Montserrat, serif;
+}
+
+.auth-body {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.phone {
+    width: 200px;
+}
+
+input {
+    outline: none;
+    width: 300px;
+    height: 30px;
+    background-color: var(--lines);
+    border-radius: 5px;
+    color: white;
+    padding-left: 10px;
+    border: 1px solid var(--background-main);
+    font-weight: 400;
+}
+
+.send_data_auth {
+    margin-top: 30px;
+    width: 200px;
+    height: 45px;
+    border-radius: 10px;
+    border: 0;
+}
+
+.send_data_auth:hover {
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+._2 {
+    margin: 0;
+}
+
+.small {
+    font-size: 16px;
+    width: 100%;
+}
+
+@media (max-width: 1300px) {
+    .auth-container {
+        width: 70%;
+        margin: auto;
+    }
+}
+
+@media (max-width: 1000px) {
+    .auth-container {
+        width: 100%;
+        margin: 0;
+    }
+
+    form {
+        margin-left: 30px;
+        text-align: center;
+        font-size: 40px;
+    }
+
+    input, form {
+        width: 60%;
+    }
+
+    input {
+        height: 80px;
+        font-size: 20px;
+        width: 90%;
+    }
+
+    .auth-body {
+        justify-content: initial;
+        text-align: center;
+    }
+
+    .auth-container {
+        height: 1000px;
+    }
+
+    .label {
+        width: 100%;
+    }
+
+    .phone {
+        width: 350px;
+    }
+
+    .send_data_auth {
+        font-size: 20px;
+        width: 250px;
+        height: 70px;
+    }
+}
+
+@media (max-width: 850px ) {
+    .phone {
+        width: 250px;
+        height: 500px;
+    }
+}

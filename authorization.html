@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Авторизоваться</title>
+    <link rel="stylesheet" href="static/loginpage.css">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <script src="js/Pages/Authorization.js" type="module"></script>
+    <script type="module">
+        import {onsubmit_custom, onclick_custom} from "./js/Pages/Authorization.js"
+        import {notNeedAuth} from "./js/Authenticate.js"
+        notNeedAuth()
+        document.getElementById("authform").onsubmit = function() {onsubmit_custom(this); return false;}
+        document.getElementsByTagName("Button")[0].onclick = function() {onclick_custom('login');}
+        document.getElementsByTagName("Button")[1].onclick = function() {onclick_custom('registration');}
+    </script>
+</head>
+<body>
+<div class="header">
+    <a class="header-text logo" href="/blogs">
+        <span class="red_color">Иери</span><span class="black_color">хон</span>
+    </a>
+</div>
+<main>
+    <div class="content-container">
+        <div class="auth-container">
+            <a class="logo_auth" href="/blogs">Иерихон</a>
+            <p class="dop">new generation of social network!</p>
+            <div class="auth-body">
+                <img class="phone" src="static/img/2300.png">
+                <form id="authform">
+                    <p class="label" for="login">Login</p>
+                    <input name="username" placeholder="Логин">
+                    <p class="label" for="password">Password</p>
+                    <input name="password" placeholder="Пароль">
+                    <div>
+                        <button class="send_data_auth" maxlenght="16" type="submit">Войти</button>
+                    </div>
+                    <p>или</p>
+                    <div>
+                        <button class="send_data_auth _2" maxlenght="16" type="submit">Зарегистрироваться</button>
+                    </div>
+                </form>
+                <p class="small">После авторизации вы получите доступ ко всем разделам социальной сети <a
+                        class="small logo_auth"
+                        href="/blogs">Иерихон</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

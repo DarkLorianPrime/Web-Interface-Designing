@@ -1,9 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 
+@font-face {
+    font-family: "Moscowmetro";
+    src: url('fonts/MoscowMetro.otf')
+}
+
+:root {
+    --background-main: #212327;
+    --lines: #292c31;
+    --online: #598f5b;
+    --background-header: #494e57;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Noto Sans', sans-serif;
+}
 
 .logo {
     font-size: 30px;
-    font-family: "Moscow metro", serif;
+    font-family: "Moscowmetro", serif;
     padding-right: 20px;
     border-right: 2px solid red;
     align-self: center;
@@ -17,6 +35,13 @@ a {
     flex-direction: column;
 }
 
+.userlink_cabinet {
+    transition: all 0.5s;
+    color: white;
+    font-size: 50px;
+    vertical-align: middle;
+}
+
 .navbar-text {
     font-size: 30px;
     margin-right: 50px;
@@ -26,13 +51,14 @@ a {
 
 .header {
     display: flex;
-    background-color: lightgray;
+    background-color: var(--background-header);
     padding: 10px;
     justify-content: space-between;
 }
 
 .header-text {
-    margin-right: 10px;
+    margin-right: 20px;
+    align-self: center;
 }
 
 .navbar {
@@ -72,10 +98,14 @@ html, body {
     margin: 0;
 }
 
-.main {
-    background-color: #4a4065;
+.main, .main_container {
+    background-color: var(--background-main);
     display: flex;
     flex-wrap: wrap;
+}
+
+.main_container {
+    height: auto;
 }
 
 .namelogo {
@@ -117,22 +147,125 @@ html, body {
     height: 100%;
 }
 
-.container-main {
+.modal-form {
+    margin-top: 90px;
+}
+
+.modal-input {
+    background: none;
+    border: none;
+    height: 50px;
+    border-bottom: 1px solid var(--lines);
+    outline: none;
+    color: white;
+    width: 50%;
+}
+
+.modal-input:focus {
+    border-bottom: 1px solid var(--online);
+}
+
+.modal-header {
+    align-self: center;
     display: flex;
+    flex-direction: row-reverse;
+    background-color: var(--background-header);
+    border-radius: 30px 30px 0 0;
+    justify-content: space-between;
+}
+
+.modal-name {
+    margin-left: 30px;
+    align-self: center;
+    font-size: 30px;
+}
+
+.modal-button {
+    border: 0;
+    background-color: var(--online);
+    width: 30%;
+    height: 50px;
+    border-radius: 15px;
+    color: white;
+    font-size: 20px;
+}
+
+.modal-button:hover {
+    cursor: pointer;
+    color: gray;
+}
+
+.modal {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+}
+
+.modal-background {
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+}
+
+.modal-body {
+    border-radius: 30px;
+    width: 50%;
+    height: 500px;
+    text-align: center;
+    background-color: var(--background-main);
+    animation: header_start 1s;
+    z-index: 50;
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    width: 100px;
+    fill: white;
+    float: right;
+}
+
+.close-modal:hover {
+    fill: gray;
+    cursor: pointer;
+}
+
+.container-main {
+    width: 100%;
     padding-top: 20px;
-    margin: 0 30px 0 30px;
     justify-content: start;
     background-color: rgba(255, 255, 255, 0.2);
     text-align: center;
-    width: 75%;
     color: white;
     height: 100%;
+}
+
+.button-create {
+    background: none;
+    border: none;
+    align-self: center;
+}
+
+.button-create:hover {
+    fill: gray;
+    stroke: gray;
+    cursor: pointer;
 }
 
 .userheader {
     width: 100%;
     padding-bottom: 20px;
-    border-bottom: 5px solid #4a4065;
+    border-bottom: 5px solid var(--lines);
 }
 
 .userheaderimage {
@@ -142,7 +275,7 @@ html, body {
 .userlogo {
     width: 10%;
     border-radius: 100%;
-    border: 5px solid #16cb16;
+    border: 5px solid #598f5b;
     margin-right: 30px;
     vertical-align: text-top;
 }
@@ -154,21 +287,15 @@ html, body {
     width: 600px;
 }
 
-.about-column {
-    font-size: 10px;
-    padding: 3px 3px;
-    border-left: 2px solid #4a4065;
-    display: inline;
-    height: 30px;
+.cabinet {
+    margin-left: 30px;
 }
 
-.about-column:last-child {
-    font-size: 10px;
-    padding: 3px 3px;
-    border-right: 2px solid #4a4065;
-    border-left: 2px solid #4a4065;
+.about-column {
+    font-size: 20px;
+    padding: 3px 20px;
     display: inline;
-    height: 30px;
+    height: 100px;
 }
 
 .posts {
@@ -179,7 +306,7 @@ html, body {
 .post {
     padding: 20px;
     width: 100%;
-    border-bottom: 1px solid #4a4065;
+    border-bottom: 1px solid var(--lines);
 }
 
 .post-title {
@@ -227,6 +354,7 @@ html, body {
         width: 10%;
         margin-right: 0;
     }
+
 }
 
 .headerlogo {
@@ -259,9 +387,21 @@ html, body {
     .side-block {
         display: none;
     }
+
+    .post {
+        padding: 50px 0;
+    }
 }
 
 @media (max-width: 1050px) {
+    .modal-start {
+        margin-top: 50px;
+    }
+
+    .about-column {
+        padding-left: 10px;
+    }
+
     .side-block {
         display: none;
     }
@@ -270,14 +410,14 @@ html, body {
         font-size: 40px;
     }
 
-    .container-main {
-        width: 95%;
-    }
-
     .posts {
         width: 95%;
         margin: 80px auto 0 auto;
 
+    }
+
+    .header-text {
+        font-size: 30px;
     }
 
     .post-text {
@@ -303,7 +443,23 @@ html, body {
         width: 100%;
         justify-content: space-between;
         animation: header_start 1s forwards;
-        background: lightgray
+        background: var(--background-header)
+    }
+
+    .modal-body {
+        width: 100%;
+        height: 80%;
+    }
+
+    .modal-input {
+        height: 50px;
+        font-size: 30px;
+    }
+
+    .modal-button {
+        width: 60%;
+        height: 50px;
+        font-size: 20px;
     }
 }
 
@@ -316,11 +472,29 @@ html, body {
     }
 }
 
+@keyframes header_stop {
+    0% {
+        opacity: 100%
+    }
+    100% {
+        opacity: 5%;
+        display: none;
+    }
+}
+
 .post-title {
     display: flex;
     align-self: center;
 }
 
+.post-name {
+    align-self: center;
+}
+
 .post-header {
     display: flex;
+}
+
+body, html {
+    height: 100%;
 }
