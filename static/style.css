@@ -102,9 +102,6 @@ html, body {
     background-color: var(--background-main);
     display: flex;
     flex-wrap: wrap;
-}
-
-.main_container {
     height: auto;
 }
 
@@ -119,23 +116,6 @@ html, body {
     text-align: center;
     color: white;
     padding-bottom: 5px;
-}
-
-.background-admin {
-    background-color: #4a4065;
-}
-
-.side-block {
-    display: flex;
-    border: 3px solid white;
-    height: 300px;
-    width: 20%;
-    text-align: center;
-    color: white;
-}
-
-.one-user {
-    text-align: left;
 }
 
 .container {
@@ -303,10 +283,16 @@ html, body {
     width: 70%;
 }
 
+body {
+    background-color: var(--background-main)
+}
+
 .post {
     padding: 20px;
     width: 100%;
     border-bottom: 1px solid var(--lines);
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .post-title {
@@ -373,21 +359,7 @@ html, body {
     border: 2px solid gray;
 }
 
-.admin {
-    border: 0;
-    margin: 2px;
-}
-
-.center-text {
-    text-align: center;
-    padding-bottom: 10px;
-}
-
 @media (max-width: 1350px) {
-    .side-block {
-        display: none;
-    }
-
     .post {
         padding: 50px 0;
     }
@@ -400,10 +372,6 @@ html, body {
 
     .about-column {
         padding-left: 10px;
-    }
-
-    .side-block {
-        display: none;
     }
 
     .logo {

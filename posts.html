@@ -2,13 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Главная, Иерихон</title>
+    <title>Александр Касимов, Иерихон</title>
     <link rel="stylesheet" href="static/style.css">
-    <script type="application/javascript" src="js/scroll.js"></script>
-    <script src="js/Pages/Blogs.js" type="module"></script>
+    <script src="js/Handler.js" type="module"></script>
     <script type="module">
         import {needAuth} from "./js/Authenticate.js";
-        import {createBlogs} from "./js/Pages/Blogs.js";
+        import {createPosts} from "./js/Pages/Posts.js";
 
         needAuth()
         document.getElementById("open-modal").onclick = () => {
@@ -21,7 +20,11 @@
             document.getElementsByClassName("modal")[0].style.display = "none";
         }
 
-        document.getElementsByTagName("form")[0].onsubmit = function() {createBlogs(this); ; return false;}
+        document.getElementsByTagName("form")[0].onsubmit = function () {
+            createPosts(this);
+
+            return false;
+        }
     </script>
 </head>
 <body>
@@ -80,17 +83,22 @@
                     </g>
                 </svg>
             </button>
-            <a class="modal-name">Создание нового блога</a>
+            <a class="modal-name">Создание нового Поста</a>
         </div>
         <form class="modal-form">
-            <a>Введите название блога:</a>
+            <a>Введите название поста:</a>
             <p><input class="modal-input" name="title" placeholder="Enter blog name"></p>
-            <a>Введите описание блога:</a>
-            <p><input class="modal-input" name="description" placeholder="Enter blog description"></p>
+            <a>Введите описание поста:</a>
+            <p><input class="modal-input" name="text" placeholder="Enter blog description"></p>
+            Опубликовать пост сразу? <input type="checkbox" name="is_published">
             <button type="submit" class="modal-button">Создать</button>
         </form>
     </div>
     <div class="modal-background"></div>
 </div>
+<footer class="footer">
+    ©Darklorian, 2022
+</footer>
+
 </body>
 </html>
