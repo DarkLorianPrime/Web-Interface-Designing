@@ -1,10 +1,9 @@
 import {sendRequest} from "../Handler.js";
-import {deleteCookie, getCookie} from "../Cookies.js";
-import {get_info} from "../utils.js";
+import {get_header_auth, get_info} from "../utils.js";
 
 get_info()
 
-let request = sendRequest("/", undefined, "get", {"authorization": "Token " + getCookie("authtoken")})
+let request = sendRequest("/", undefined, "get", get_header_auth())
 request.then(async r => {
     let json = await r.json()
     json.forEach(r => {
@@ -52,15 +51,23 @@ request.then(async r => {
         div.appendChild(div_header)
         div.appendChild(a_left_content)
         document.getElementsByClassName("posts")[0].appendChild(div)
+        let blogs_list = document.getElementsByClassName("blog");
+
+        blogs_list[blogs_list.length - 1].addEventListener("mousedown", function (event) {
+            if (event.button === 2) {
+                console.log(event.pageX, event.pageY)
+                sendRequest(`/${r["ud"]}/`, undefined, )
+                return false;
+            }
+        })
     })
 })
 
 export function createBlogs(e) {
     console.log(e)
     let data = new FormData(e)
-    let r = sendRequest("/", data, "post", {"authorization": "Token " + getCookie("authtoken")});
+    let r = sendRequest("/", data, "post",  get_header_auth());
     r.then(async resp => {
-        let json = await resp.json()
         if (resp.ok) {
             document.getElementsByClassName("modal")[0].style.display = "none";
         }

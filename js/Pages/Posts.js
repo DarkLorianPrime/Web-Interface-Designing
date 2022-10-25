@@ -1,6 +1,5 @@
 import {sendRequest} from "../Handler.js";
-import {getCookie} from "../Cookies.js";
-import {get_info} from "../utils.js";
+import {get_header_auth, get_info} from "../utils.js";
 
 get_info()
 
@@ -8,7 +7,7 @@ const blog_id = new URLSearchParams(window.location.search)
 if (!blog_id.has("blog_id")) {
     document.location.replace("https://backend.darklorian.ru/")
 }
-let get_blog = sendRequest(`/${blog_id.get("blog_id")}/`, undefined, "get", {"authorization": "Token " + getCookie("authtoken")})
+let get_blog = sendRequest(`/${blog_id.get("blog_id")}/`, undefined, "get", get_header_auth())
 get_blog.then(async resp => {
     let json = await resp.json();
     console.log(json)
@@ -20,9 +19,8 @@ get_blog.then(async resp => {
 export function createPosts(e) {
     console.log(e)
     let data = new FormData(e)
-    let r = sendRequest(`/${blog_id.get("blog_id")}/posts/`, data, "post", {"authorization": "Token " + getCookie("authtoken")});
+    let r = sendRequest(`/${blog_id.get("blog_id")}/posts/`, data, "post", get_header_auth());
     r.then(async resp => {
-        let json = await resp.json()
         if (resp.ok) {
             document.getElementsByClassName("modal")[0].style.display = "none";
         }
@@ -31,7 +29,7 @@ export function createPosts(e) {
     return false;
 }
 
-let request = sendRequest(`/${blog_id.get("blog_id")}/posts/`, undefined, "get", {"authorization": "Token " + getCookie("authtoken")})
+let request = sendRequest(`/${blog_id.get("blog_id")}/posts/`, undefined, "get", get_header_auth())
 request.then(async r => {
     let json = await r.json()
     console.log(json["posts"])

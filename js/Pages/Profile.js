@@ -1,20 +1,22 @@
 import {sendRequest} from "../Handler.js";
-import {deleteCookie, getCookie} from "../Cookies.js";
+import {deleteCookie} from "../Cookies.js";
+import {get_header_auth} from "../utils.js";
 
 export function setProfile() {
-    let request = sendRequest("/getinfo/", undefined, "get", {"authorization": "Token " + getCookie("authtoken")})
+    let request = sendRequest("/getinfo/", undefined, "get", get_header_auth())
     request.then(async r => {
         let json = await r.json()
-        if (r.status == 401) {
+        if (r.status === 401) {
             deleteCookie("authtoken")
             document.location.replace("https://backend.darklorian.ru/authorization")
         }
+
         if (r.ok) {
             document.getElementsByClassName("userlink_cabinet")[0].textContent = json["response"][0]["username"];
             document.getElementById("date").textContent = new Date(json["response"][0]["registration_data"]).toLocaleDateString()
         }
     })
-    request = sendRequest("/posts/my/", undefined, "get", {"authorization": "Token " + getCookie("authtoken")})
+    request = sendRequest("/posts/my/", undefined, "get", get_header_auth())
     request.then(async r => {
         let json = await r.json()
         console.log(json)
@@ -59,4 +61,5 @@ export function setProfile() {
         })
     })
 }
+
 setProfile()

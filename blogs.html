@@ -21,21 +21,21 @@
             document.getElementsByClassName("modal")[0].style.display = "none";
         }
 
-        document.getElementsByTagName("form")[0].onsubmit = function() {createBlogs(this); ; return false;}
+        document.getElementsByTagName("form")[0].onsubmit = function() {createBlogs(this); return false;}
     </script>
 </head>
-<body>
+<body oncontextmenu="return false;">
 <div class="main-header">
     <div class="header">
         <a class="header-text logo">
             <span class="red_color">Иери</span><span class="black_color">хон</span>
         </a>
         <div class="_logo">
-            <a href="profile">
+            <a href="/profile">
                 <img class="userlogo headerlogo a192"
-                     src="media/images/example_logo.png">
+                     src="media/images/example_logo.png" alt="">
             </a>
-            <a class="userlink small" href="profile">Александр Касимов</a>
+            <a class="userlink small" href="/profile"></a>
         </div>
     </div>
     <div class="header">

@@ -79,12 +79,28 @@ a {
     text-decoration: none;
 }
 
+.blog {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    word-wrap: break-word;
+}
+
+.blog:hover {
+    cursor: pointer;
+}
+
 .userlink {
     transition: all 0.5s;
     color: white;
     font-size: 50px;
     vertical-align: middle;
 
+}
+
+.post-text {
+    display: inline-block;
+    max-width: 500px;
 }
 
 .userlink:hover {
